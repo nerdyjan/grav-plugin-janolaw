@@ -1,0 +1,26 @@
+en:
+  PLUGIN_JANOLAW:
+    USERID: User-ID
+    USERID_DESCRIPTION: 'The User-ID for the janolaw AGB-Hosting-Service'
+    SHOPID: Shop-ID
+    SHOPID_DESCRIPTION: 'The Shop-ID for the janolaw AGB-Hosting-Service'
+    VERSION: Version
+    VERSION_DESCRIPTION: 'The version of your purchased janolaw AGB-Hosting-Service'
+
+de:
+  PLUGIN_JANOLAW:
+    USERID: User-ID
+    USERID_DESCRIPTION: 'Die User-ID für den janolaw AGB-Hosting-Service'
+    SHOPID: Shop-ID
+    SHOPID_DESCRIPTION: 'Die Shop-ID für den janolaw AGB-Hosting-Service'
+    VERSION: Version
+    VERSION_DESCRIPTION: 'Die Version Ihres gebuchten janolaw AGB-Hosting-Service'
+
+fr:
+  PLUGIN_JANOLAW:
+    USERID: User-ID
+    USERID_DESCRIPTION: "L'ID utilisateur pour le service d'hébergement de CGV janolaw"
+    SHOPID: Shop-ID
+    SHOPID_DESCRIPTION: "L'ID de la boutique pour le service d'hébergement de CGV janolaw"
+    VERSION: Version
+    VERSION_DESCRIPTION: "La version de votre service d'hébergement de CGV janolaw acheté"

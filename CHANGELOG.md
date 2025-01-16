@@ -1,0 +1,6 @@
+
+# v1.0.0
+## 16-01-2025
+
+1. [](#new)
+    * janolaw AGB-Hosting first release, get more informations at [janolaw GmbH](https://janolaw.de)

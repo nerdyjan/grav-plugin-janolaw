@@ -1,0 +1,42 @@
+name: janolaw AGB-Hosting
+version: 1.0.0
+type: plugin
+slug: janolaw
+description: The <a href="https://janolaw.de" target="_blank">janolaw AGB-Hosting-Service</a> for Websites and Shops
+icon: legal
+author:
+  name: Jan Giebels
+  email: info@giebels.biz
+  url: https://giebels.biz
+homepage: https://github.com/nerdyjan/grav-plugin-janolaw/
+demo: 
+keywords: plugin, terms of use, imprint, privacy policy, janolaw
+bugs: https://github.com/nerdyjan/grav-plugin-janolaw/issues
+license: MIT
+dependencies:
+    - { name: grav, version: '>=1.7.0' }
+
+form:
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 1
+      options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+      validate:
+           type: bool
+
+    userid:
+      type: text
+      size: medium
+      label: PLUGIN_JANOLAW.USERID
+      help: PLUGIN_JANOLAW.USERID_DESCRIPTION
+
+    shopid:
+      type: text
+      size: medium
+      label: PLUGIN_JANOLAW.SHOPID
+      help: PLUGIN_JANOLAW.SHOPID_DESCRIPTION
