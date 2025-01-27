@@ -50,8 +50,6 @@ process:
 
 Notice the `process:` declaration needed on every page where you use the `{{janolaw()}}` twig function. As the plugin outputs raw HTML, the `|raw` suffix should be used if you want the document content rendered.
 
-Please feel free to adjust the look with your own CSS, consult you used themes documentation for further details.
-
 Available documents and languages depend on your purchased service, as there are:
 
 - `legaldetails` for mprint
@@ -68,6 +66,15 @@ Available languages (depending on purchased package):
 - English
 - French
 
+## Styling
+
+Please feel free to adjust the look with your own CSS, consult you used themes documentation for further details.
+
+The used CSS classes are:
+
+- `janolaw-paragraph`
+- `janolaw-text`
+
 # Updating
 
 As development for the janolaw AGB-Hosting plugin continues, new versions may become available that add additional features and functionality, improve compatibility with newer Grav releases, and generally provide a better user experience. Updating janolaw AGB-Hosting is easy, and can be done through Grav's GPM system, as well as manually.
@@ -82,7 +89,7 @@ This command will check your Grav install to see if your janolaw AGB-Hosting plu
 
 > Note: Any changes you have made to any of the files listed under this directory will also be removed and replaced by the new set. Any files located elsewhere (for example a YAML settings file placed in `user/config/plugins`) will remain intact.
 
-## Configuration
+# Configuration
 
 Simply copy the `user/plugins/janolaw/janolaw.yaml` into `user/config/plugins/janolaw.yaml` and make your modifications.
 

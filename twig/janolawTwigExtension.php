@@ -1,10 +1,8 @@
 <?php
 namespace Grav\Plugin;
 
-use Grav\Common\Cache;
 use Grav\Common\Grav;
 use Grav\Common\Twig\Extension\GravExtension;
-use Grav\Framework\File\Formatter\MarkdownFormatter;
 
 class janolawTwigExtension extends GravExtension
 {
@@ -39,6 +37,8 @@ class janolawTwigExtension extends GravExtension
     {
         $base_url = 'https://www.janolaw.de/agb-service/shops';
         $config = $this->config->get('plugins.janolaw');
+        $language = $this->grav['language']->getActive();
+        if ($language == 'en') { $language = 'gb'; }
 
         $error = "<div class='notices red'><p><b>Server Error:</b>&nbsp;&nbsp;&nbsp;&nbsp;Document <u>".$type."</u> not found! Please contact your website administrator!</p></div>";
         $error_lang = "<div class='notices red'><p><b>Server Error:</b>&nbsp;&nbsp;&nbsp;&nbsp;Document <u>".$type."</u> with language <u>".$this->grav['language']->getLanguage()."</u> not found! Please contact your website administrator!</p></div>";
@@ -52,16 +52,16 @@ class janolawTwigExtension extends GravExtension
         $error = $error_lang;
         
         # v2 check
-        $headers = @get_headers($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$this->grav['language']->getActive().'/'.$type.'_include.html');
+        $headers = @get_headers($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$language.'/'.$type.'_include.html');
         if($headers[0] == 'HTTP/1.1 200 OK') {
             $this->config->set('plugins.janolaw.version', 'v2');
-            return file_get_contents($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$this->grav['language']->getActive().'/'.$type.'_include.html');
+            return file_get_contents($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$language.'/'.$type.'_include.html');
         }
 
         # v3 check
-        $headers = @get_headers($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$this->grav['language']->getActive().'/'.$type.'.pdf');
+        $headers = @get_headers($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$language.'/'.$type.'.pdf');
         if($headers[0] == 'HTTP/1.1 200 OK') {
-            return file_get_contents($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$this->grav['language']->getActive().'/'.$type.'_include.html');
+            return file_get_contents($base_url.'/'.$config['userid'].'/'.$config['shopid'].'/'.$language.'/'.$type.'_include.html');
         }
 
         return $error;
